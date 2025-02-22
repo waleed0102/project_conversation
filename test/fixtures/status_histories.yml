@@ -1,0 +1,11 @@
+one:
+  project: one
+  user: one
+  old_status: 0  # not_started
+  new_status: 1  # in_progress
+
+two:
+  project: two
+  user: two
+  old_status: 1  # in_progress
+  new_status: 2  # on_hold

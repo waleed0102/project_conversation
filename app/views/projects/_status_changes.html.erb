@@ -1,0 +1,24 @@
+<div class="col-md-6">
+  <div class="card border-warning mb-4">
+    <div class="card-header bg-warning text-dark">
+      <h2 class="mb-0">Status Changes</h2>
+    </div>
+    <div class="card-body">
+      <% if status_history.any? %>
+        <ul class="list-group">
+          <% status_history.each do |status_change| %>
+            <li class="list-group-item">
+              <strong class="text-dark"><%= status_change.user.name %></strong> changed status from 
+              <span class="badge badge-secondary"><%= status_change.old_status.humanize %></span> 
+              to 
+              <span class="badge badge-success"><%= status_change.new_status.humanize %></span> 
+              <span class="text-muted small">(<%= time_ago_in_words(status_change.created_at) %> ago)</span>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="text-muted">No Status Changes yet.</p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="col-md-6">
+  <div class="card border-danger">
+    <div class="card-header bg-danger text-white">
+      <h3 class="mb-0">Change Status</h3>
+    </div>
+    <div class="card-body">
+      <%= form_for project, url: project_status_histories_path(project), method: :post, local: true do |form| %>
+        <div class="form-group">
+          <%= form.label :status, "Select New Status", class: "form-label text-dark" %>
+          <%= form.select :status, Project.statuses.keys.map { |key| [key.humanize, key] }, {}, class: "form-control" %>
+        </div>
+        <%= form.submit 'Update Status', class: "btn btn-danger btn-block" %>
+      <% end %>
+    </div>
+  </div>
+</div>

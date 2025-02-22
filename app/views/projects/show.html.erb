@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <!-- Back Button -->
+  <div class="mb-4">
+    <%= link_to '← Back to Projects', projects_path, class: "btn btn-outline-dark" %>
+  </div>
+
+  <!-- Project Title & Status -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-primary">
+      <%= @project.name %>
+    </h1>
+    <span class="badge badge-danger"><%= @project.status.humanize %></span>
+  </div>
+
+  <div class="row">
+    <!-- Comments Section -->
+    <%= render 'projects/comments', comments_history: @comments_history %>
+
+    <!-- Status Changes Section -->
+    <%= render 'projects/status_changes', status_history: @status_history %>
+  </div>
+
+  <!-- Forms Section -->
+  <div class="row">
+    <!-- Add Comment Form -->
+    <%= render 'projects/add_comment_form', project: @project %>
+
+    <!-- Change Status Form -->
+    <%= render 'projects/change_status_form', project: @project %>
+  </div>
+</div>

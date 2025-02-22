@@ -1,0 +1,7 @@
+one:
+  name: "Alpha Project"
+  status: 0  # not_started
+
+two:
+  name: "Beta Project"
+  status: 1  # in_progress

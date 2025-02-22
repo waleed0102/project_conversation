@@ -1,0 +1,22 @@
+<table class="table table-hover table-bordered">
+  <thead class="bg-dark text-white">
+    <tr>
+      <th>#</th>
+      <th>Project Name</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% projects.each_with_index do |project, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td class="text-success font-weight-bold"><%= project.name %></td>
+        <td><span class="badge badge-warning text-dark"><%= project.status.humanize %></span></td>
+        <td>
+          <%= link_to "View Details", project_path(project), class: "btn btn-sm btn-outline-primary" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
